@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: le_cheveu_blanc_production
-  username: le_cheveu_blanc
-  password: <%= ENV["LE_CHEVEU_BLANC_DATABASE_PASSWORD"] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
