@@ -7,7 +7,7 @@
       Si votre demande concerne les délais d’envois d’une commande, merci de consulter cette page avant de m’écrire
     </p> %>
 
-    <%= form_for :contact do |field| %>
+    <%= form_for :contact, url: send_message_path, method: :post  do |field| %>
       <div class="text-input mb-3">
         <%= field.label "Nom & Prénom" %>
         <%= field.text_field :full_name %>

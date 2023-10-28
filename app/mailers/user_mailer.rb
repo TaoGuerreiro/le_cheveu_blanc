@@ -15,6 +15,7 @@ class UserMailer < Spree::BaseMailer
 
   def new_message_from_store
     @store = Spree::Store.default
+
     @contact = params[:contact]
     mail to: "hello@lecheveublanc.fr", from: from_address(@store), subject: "Nouveau message sur le site"
   end

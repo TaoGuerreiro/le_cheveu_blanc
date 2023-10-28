@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'home#landing'
   get '/about', to: 'home#about'
   get '/contact', to: 'home#contact'
+  post '/send_message', to: "home#send_message"
 
   devise_for(:user, {
     class_name: 'Spree::User',
