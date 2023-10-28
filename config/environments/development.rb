@@ -37,9 +37,16 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
+  # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
+
+  config.action_mailer.default_url_options = { host: Rails.application.credentials.host }
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.perform_caching = false
+  config.action_mailer.postmark_settings    = {
+    api_token: Rails.application.credentials.postmark_api_token,
+    http_ssl_version: :TLSv1_2
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
