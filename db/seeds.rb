@@ -7,3 +7,4 @@
 #   Character.create(name: "Luke", movie: movies.first)
 Spree::Core::Engine.load_seed
 Spree::Auth::Engine.load_seed
+SolidusStripe::Engine.load_seed

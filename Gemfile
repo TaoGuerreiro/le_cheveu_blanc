@@ -3,21 +3,24 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
-gem 'kaminari-i18n', '~> 0.5.0'
-gem 'rails-i18n'
-gem 'solidus_i18n', '~> 2.0'
+
 gem "bootsnap", require: false
 gem "canonical-rails"
 gem "cssbundling-rails"
+gem "escompress", "~> 0.3.0"
 gem "jbuilder"
 gem "jsbundling-rails"
+gem "kaminari-i18n", "~> 0.5.0"
 gem "pg", "~> 1.1"
 gem "postmark-rails"
 gem "puma", "~> 5.0"
+gem "rails-i18n"
 gem "rails", "~> 7.0.8"
 gem "redis", "~> 4.0"
 gem "responders"
 gem "solidus_auth_devise", "~> 2.5"
+gem "solidus_i18n", "~> 2.0"
+gem "solidus_stripe", "~> 5.0"
 gem "solidus_support"
 gem "solidus", "~> 4.2"
 gem "sprockets-rails"
@@ -51,5 +54,3 @@ group :test do
   gem "capybara-screenshot", "~> 1.0"
   gem "database_cleaner", "~> 1.7"
 end
-
-gem "escompress", "~> 0.3.0"

@@ -7,22 +7,25 @@
       Si votre demande concerne les délais d’envois d’une commande, merci de consulter cette page avant de m’écrire
     </p> %>
 
-    <%= form_for :contact, url: send_message_path, method: :post  do |field| %>
+    <%= form_for @contact, url: send_message_path, method: :post  do |field| %>
       <div class="text-input mb-3">
-        <%= field.label "Nom & Prénom" %>
+        <%= field.label :full_name, "Nom & Prénom" %>
         <%= field.text_field :full_name %>
+        <%= validation_message(@contact, :full_name) %>
       </div>
       <div class="text-input mb-3">
-        <%= field.label "email" %>
+        <%= field.label :email, "Email" %>
         <%= field.text_field :email %>
+        <%= validation_message(@contact, :email) %>
       </div>
       <div class="text-input mb-3 hidden">
-        <%= field.label "nickname" %>
+        <%= field.label :nickname, "Nickname" %>
         <%= field.text_field :nickname %>
       </div>
       <div class="text-input mb-3">
-        <%= field.label "Message" %>
+        <%= field.label :content, "Message" %>
         <%= field.text_area :content, class: "h-24" %>
+        <%= validation_message(@contact, :content) %>
       </div>
       <%= field.submit "Envoyer", class: "mt-6 px-3 py-2 border rounded-lg hover:bg-blue-200 cursor-pointer" %>
     <% end %>

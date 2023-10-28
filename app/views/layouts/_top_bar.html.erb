@@ -6,7 +6,13 @@
     <%= link_to "Portfolio", root_path, class: "tracking-widest"%>
     <%= link_to "À propos", about_path, class: "tracking-widest"%>
     <%= link_to "Contact", contact_path, class: "tracking-widest"%>
-    <%= link_to "Boutique", nested_taxons_path("categories"), class: "tracking-widest"%>
+    <%= link_to "#", class: "tracking-widest" do %>
+      <div class="relative">
+        Boutique
+        <span class="absolute left-24 bottom-4 rotate-45 bg-primary px-2 py-2 rounded-lg text-white whitespace-nowrap">Bientôt !</span>
+      </div>
+    <% end %>
+
   </div>
   <div class="absolute top-10 right-10" id="link-to-cart" data-top-bar-target="cartLink">
     <noscript>
@@ -39,7 +45,7 @@
       <%= link_to "Portfolio", root_path, class: "tracking-widest text-5xl text-white mb-8"%>
       <%= link_to "À propos", about_path, class: "tracking-widest text-5xl text-white mb-8"%>
       <%= link_to "Contact", contact_path, class: "tracking-widest text-5xl text-white mb-8"%>
-      <%= link_to "Boutique", nested_taxons_path("categories"), class: "tracking-widest text-5xl text-white mb-8"%>
+      <%# <%= link_to "Boutique", nested_taxons_path("categories"), class: "tracking-widest text-5xl text-white mb-8"%>
     </div>
     <div class="" id="link-to-cart" data-top-bar-target="cartLink">
       <noscript>

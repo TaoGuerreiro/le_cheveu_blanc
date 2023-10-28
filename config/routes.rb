@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount SolidusStripe::Engine, at: '/solidus_stripe'
   root to: 'home#landing'
   get '/about', to: 'home#about'
   get '/contact', to: 'home#contact'

@@ -17,10 +17,20 @@ class HomeController < StoreController
   end
 
   def send_message
-    contact = Contact.new(contact_params)
+    @contact = Contact.new(contact_params)
 
-    UserMailer.with(contact:).new_message_from_store.deliver_now
-    redirect_to root_path, notice: "Message bien envoyé"
+    if @contact.valid?
+      begin
+        UserMailer.with(contact: @contact).new_message_from_store.deliver_now
+        redirect_to root_path, notice: "Message bien envoyé", status: :see_other
+      rescue => e
+        # Ajouter une logique pour gérer l'erreur d'envoi de l'e-mail, par exemple :
+        flash[:error] = "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer."
+        render "contact", status: :unprocessable_entity
+      end
+    else
+      render "contact", status: :unprocessable_entity
+    end
   end
 
   def index
