@@ -13,7 +13,7 @@ class HomeController < StoreController
   end
 
   def contact
-    @contact = Contact.new
+    UserMailer.with(contact: Contact.new(email: params[:email], full_name: params[:full_name], content: params[:content])).new_message_from_store.deliver_now
   end
 
   def index

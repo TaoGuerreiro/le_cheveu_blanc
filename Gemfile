@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+gem 'kaminari-i18n', '~> 0.5.0'
+gem 'rails-i18n'
+gem 'solidus_i18n', '~> 2.0'
 gem "bootsnap", require: false
 gem "canonical-rails"
 gem "cssbundling-rails"
