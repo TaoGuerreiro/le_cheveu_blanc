@@ -1,10 +1,10 @@
 <header class="product-header">
-  <h1 class="product-header__title" itemprop="name">
+  <h1 class="mb-3 text-3xl font-bold" itemprop="name">
     <%= product.name %>
   </h1>
 
   <% if product.price_for_options(current_pricing_options)&.money and !product.price.nil? %>
-    <h2 class="product-header__title" id="product-price">
+    <h2 class="product-header__title mb-3" id="product-price">
       <%= content_tag(
         :span,
         display_price(product),

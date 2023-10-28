@@ -7,7 +7,7 @@ Spree.load_defaults '4.2.1'
 Spree.config do |config|
   # Core:
   # Default currency for new sites
-  config.currency = "USD"
+  config.currency = "EUR"
 
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
@@ -50,7 +50,7 @@ Spree.config do |config|
 end
 
 Spree::Backend::Config.configure do |config|
-  config.locale = 'en'
+  config.locale = 'fr'
 
   # Uncomment and change the following configuration if you want to add
   # a new menu item:

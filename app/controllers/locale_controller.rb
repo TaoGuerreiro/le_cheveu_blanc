@@ -2,6 +2,7 @@
 
 class LocaleController < StoreController
   def set
+
     requested_locale = params[:switch_to_locale] || params[:locale]
 
     if locale_is_available?(requested_locale)

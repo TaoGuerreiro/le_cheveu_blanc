@@ -22,6 +22,22 @@
     }
   }
 
+  textarea {
+    border: solid 1px $color-border;
+    border-radius: 1px;
+    display: block;
+    font-size: $input-font-size;
+    height: 10.8rem;
+    padding: 0 1rem;
+    width: 100%;
+
+    &:focus {
+      border-color: transparent;
+      box-shadow: none;
+      outline: solid 1px $color-border-dark;
+    }
+  }
+
   &--small {
     label {
       font-size: $label-font-size;

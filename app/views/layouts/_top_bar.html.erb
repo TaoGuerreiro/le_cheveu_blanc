@@ -1,21 +1,50 @@
-<div class="top-bar" data-controller="top-bar">
-  <figure class="logo">
-    <%= link_to image_tag(Spree::Config[:logo]), root_path %>
-  </figure>
-
-  <div class="top-bar__search">
-    <%= render 'shared/search/search_bar', taxons: taxons, taxon: taxon %>
-  </div>
-
-  <% if spree_current_user %>
-    <%= link_to I18n.t('spree.my_account'), account_path, class: 'auth-link' %>
-  <% else %>
-    <%= link_to I18n.t('spree.login'), login_path, class: 'auth-link' %>
+<div class="w-full hidden md:block" data-controller="top-bar">
+  <%= link_to root_path, class: "w-full flex items-center justify-center" do %>
+    <%= image_tag("logo/logo_v2.png", class: "h-48") %>
   <% end %>
-
-  <div class="cart-link" id="link-to-cart" data-top-bar-target="cartLink">
+  <div class="flex justify-around items-center pb-12">
+    <%= link_to "Portfolio", root_path, class: "tracking-widest"%>
+    <%= link_to "À propos", about_path, class: "tracking-widest"%>
+    <%= link_to "Contact", contact_path, class: "tracking-widest"%>
+    <%= link_to "Boutique", nested_taxons_path("categories"), class: "tracking-widest"%>
+  </div>
+  <div class="absolute top-10 right-10" id="link-to-cart" data-top-bar-target="cartLink">
     <noscript>
       <%= link_to t('spree.cart'), cart_path %>
     </noscript>
+  </div>
+</div>
+
+<div class="h-36 md:hidden">
+  <%= link_to root_path, class: "w-full flex items-center justify-center" do %>
+    <%= image_tag("logo/logo_v2.png", class: "h-36") %>
+  <% end %>
+  <%= label_tag :phonenav, class: "fixed shadow-xl z-40 top-10 left-10 rounded-full" do %>
+    <div class="w-16 h-16 bg-secondary flex items-center justify-center rounded-full p-3">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </div>
+  <% end %>
+  <%= check_box_tag :phonenav, nil, nil, {class: "hidden peer"} %>
+  <div class="z-50 fixed hidden peer-checked:block top-0 left-0 right-0 bottom-0 bg-secondary/90">
+    <%= label_tag :phonenav, class: "absolute top-10 right-10" do %>
+      <div class="w-16 h-16 flex items-center justify-center rounded-full p-3 text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
+    <% end %>
+    <div class="flex flex-col justify-around items-start py-12 px-12">
+      <%= link_to "Portfolio", root_path, class: "tracking-widest text-5xl text-white mb-8"%>
+      <%= link_to "À propos", about_path, class: "tracking-widest text-5xl text-white mb-8"%>
+      <%= link_to "Contact", contact_path, class: "tracking-widest text-5xl text-white mb-8"%>
+      <%= link_to "Boutique", nested_taxons_path("categories"), class: "tracking-widest text-5xl text-white mb-8"%>
+    </div>
+    <div class="" id="link-to-cart" data-top-bar-target="cartLink">
+      <noscript>
+        <%= link_to t('spree.cart'), cart_path %>
+      </noscript>
+    </div>
   </div>
 </div>

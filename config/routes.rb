@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
+  root to: 'home#landing'
+  get '/about', to: 'home#about'
+  get '/contact', to: 'home#contact'
 
   devise_for(:user, {
     class_name: 'Spree::User',

@@ -17,6 +17,10 @@ body {
   line-height: $line-height-base;
   text-align: left;
   text-rendering: optimizeLegibility;
+  h1 {
+    font-weight: $font-weight-regular;
+    font-family: $font-family-title;
+  }
 }
 
 *,

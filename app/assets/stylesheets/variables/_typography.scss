@@ -1,6 +1,7 @@
 // -- Typography
 
-$font-family-base:            "Inter", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$font-family-base:            "Montserrat", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$font-family-title:           "Poppins", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $font-family-monospace:       "SFMono-Regular", "SF Mono", "Ubuntu Mono", "Consolas", "DejaVu Sans Mono", "Menlo", monospace;
 
 
@@ -10,7 +11,8 @@ $font-size-large:             1.8rem;
 $font-size-small:             1.4rem;
 $font-size-smaller:           1.3rem;
 
-$font-weight-normal:          300;
+$font-weight-normal:          400;
+$font-weight-regular:         400;
 $font-weight-bold:            500;
 $font-weight-bolder:          700;
 

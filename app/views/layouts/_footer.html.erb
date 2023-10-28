@@ -1,6 +1,6 @@
 <footer class="footer">
   <p>
-    <%= t 'spree.powered_by' %> <%= link_to 'Solidus', 'http://solidus.io/' %>
+    <%= "Clémence Porcheret #{Date.current.year} - All rights reserved  ❤️" %>
   </p>
 
   <%
@@ -21,6 +21,7 @@
           <%= label_tag :switch_to_locale, "#{t('spree.i18n.language')}:" %>
           <%= select_tag(:switch_to_locale, options_for_select(available_locales, I18n.locale)) %>
         </div>
+        <%= submit_tag "go" %>
       <% end %>
     </div>
   <% end %>

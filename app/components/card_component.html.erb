@@ -1,0 +1,8 @@
+<div class="rounded-lg hover:scale-105 transition relative group">
+  <%= link_to link, target: "_blank" do %>
+    <div class="bg-secondary/90 text-center text-xs md:text-3xl text-white font-bold uppercase group-hover:opacity-100 group-hover:shadow-xl opacity-0 absolute top-0 bottom-0 left-0 right-0 rounded-lg hover:shadow-xl transition flex items-center justify-center">
+      <%= title %>
+    </div>
+    <%= image_tag image, class: "cursor-pointer max-w-full rounded-lg group-hover:opacity-10 transition" %>
+  <% end %>
+</div>
