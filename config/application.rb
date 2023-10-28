@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module LeCheveuBlanc
   class Application < Rails::Application
+    config.assets.css_compressor = Escompress::Compressor.new(loader: :css)
+
     if defined?(FactoryBotRails)
       initializer after: "factory_bot.set_factory_paths" do
         require 'spree/testing_support/factory_bot'

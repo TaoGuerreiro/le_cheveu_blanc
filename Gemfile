@@ -47,3 +47,5 @@ group :test do
   gem "capybara-screenshot", "~> 1.0"
   gem "database_cleaner", "~> 1.7"
 end
+
+gem "escompress", "~> 0.3.0"
